@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding:0;
+}
+.navbar-container{
+    height: 60px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+   
+}
+
+.navbar-item{
+    color: white;
+    margin: 25px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-Logo{
+   margin-left: 20px;
+   color: white;
+   margin-top: 20px;
+   letter-spacing: 2px;
+   font-family: 'Anton', sans-serif;
+   font-family: 'Roboto', sans-serif;
+}
+
+.navbar-item ul{
+    list-style-type: none;
+    list-style: none;
+    overflow: hidden;
+
+}
+
+
+.navbar-item ul li{
+    float: left;    
+    margin-left: 20px;
+}
