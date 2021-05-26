@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import NotesBlock from './NotesBlock'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 require ('./style/allNotes.css')
@@ -10,7 +11,7 @@ const AllNotes = () =>{
     useEffect(()=>{
         const getNotes = async()=>{
             try{
-                const res = await axios.get('http://localhost:5000/notes')
+                const res = await axios.get('/notes')
                 if(!res){
                     console.log('no data fround ')
                 }
@@ -23,6 +24,7 @@ const AllNotes = () =>{
 
     }, [])
 
+    Notes.reverse()
     const printNotes = Notes.map((note)=>{
         const title =  note.title.slice(0, 12)
         const description = note.description.slice(0, 50)
@@ -36,11 +38,21 @@ const AllNotes = () =>{
         )
     })
 
+    const onClickCreate = (e) =>{
+        
+    }
     return (
-        <div className="allNotes-container">
-            {printNotes}
-            
+        <div>
+            <div>
+                <button className="CreateNote-button">
+                    <Link to ="create" className="Link-CR"> Create New</Link>    
+                </button>
+            </div>
+            <div className="allNotes-container">
+                {printNotes}
+            </div>
         </div>
+        
     )
 }
 
