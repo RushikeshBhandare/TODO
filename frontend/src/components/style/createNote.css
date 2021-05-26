@@ -1,0 +1,38 @@
+.createNote-Container{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+.createNote-block-title{
+    margin: 10px;
+    border-radius: 15px;
+    height: 10%;
+    background-color: royalblue;
+    padding: 10px;
+}
+
+.createNote-block-title input{
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    /* padding-left: 20px; */
+}
+
+.createNote-block-description{
+    margin: 10px;
+    border-radius: 15px;
+    padding: 20px;
+
+    height: 70%;
+    background-color: red;
+}
+.createNote-block-description input{
+    width: 100%;
+    height: 600px;
+    font-size: 20px;
+}

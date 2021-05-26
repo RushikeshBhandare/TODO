@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400&display=swap');
+
+
+.allNotes-container{
+    margin-top: 50x;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+
+    font-family: 'Anton', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
+    
+
+}
+
+.block-container{
+    background-color:rgb(255, 219, 88);
+    width: 180px;
+    margin: 10px;
+    height:250px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 8px  rgba(80, 80, 80, 0.2);
+}
+
+.block-title{
+    margin: 10px;
+    margin-top: 0px;
+    font-size: 20px;
+    -webkit-line-clamp: 2; /* number of lines to show */
+}
+
+.block-body{  
+    margin: 10px;
+    height: 150px;
+}
+
+.block-date{
+    margin: 10px;
+    margin-top: 10px;
+   font-size: 13px;
+   color: rgb(63, 60, 60);
+}
+
+.block-delete{
+    margin: 0;
+    text-align: end;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.delete-Text{
+    cursor: pointer;
+
+}
