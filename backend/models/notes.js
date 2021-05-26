@@ -10,6 +10,10 @@ const NotesSchema = new mongoose.Schema({
     description:{
         type:String,
         trim:true
+    },
+    date:{
+        type: Date,
+        required:true
     }
 },{
     timestamps: true

@@ -21,9 +21,11 @@ router.route('/add').post(async(req, res)=>{
         console.log(req.body)
         const title = req.body.title;
         const description = req.body.description;
+        const date = req.body.date;
         const newNote = new Notes({
             title,
-            description
+            description,
+            date
         })
 
         await newNote.save()
