@@ -38,7 +38,7 @@ const CreateNote = () =>{
     return(
         <div className="CreateNote">
             <div className="createNote-Text" onClick={(e)=>{onClickSubmit(e)}}>
-              <Link to="/" className="CreteNoteHere">
+              <Link to="/all" className="CreteNoteHere">
                   <div className="JustText"><strong>CLICK HERE TO CREATE</strong> </div>           
               </Link>
             </div>

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400&display=swap');
+
+
+.signUp-container{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    font-family: 'Anton', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
+    
+
+}
+.signUp-Welcome{
+    width: 375px;
+    margin-top: 10px;
+    height: 100px;
+    /* background-color: black; */
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.signUp-mainBlock{
+    width: 340px;
+    height: 770px;
+    /* background-color: brown; */
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+
+}
+
+.signUp-lable{
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.signUp-input input{
+    width: 300px;
+    height: 35px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.signUp{
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.signUp button{
+    width: 150px;
+    height: 40px;
+    border:none;
+    border-radius: 10px;   
+    font-size: 20px;
+    cursor: pointer;
+    padding: 7px;
+}
+.passMatch{
+    margin: 15px;
+    color:red;
+    font-size: 15px;
+    
+}
+
+.passMatch-valid{
+    margin: 15px;
+    color:rgb(87, 87, 87);
+    font-size: 15px;
+    text-align: center;
+}
+
+.new-resister{
+    display: flex;
+    justify-content: right;
+}
+
+.res{
+    text-align: right;
+    cursor: pointer;
+    columns: blue;
+}
+
+.signUp-radio{
+    margin: 10px;
+}
+
+
+.signUp-radio input{
+    width: 50px;
+}
+
+.signUp-Age{
+    margin: 10px;
+    font-size: 20px;
+    display: flex;
+}
+.signUp-Age input{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+}

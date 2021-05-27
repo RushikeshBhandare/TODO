@@ -11,8 +11,9 @@ app.use(cors())
 connectDB();
 
 const routerNotes = require('./routes/routeNotes')
+const routeUsers = require('./routes/routeUsers')
 app.use('/notes', routerNotes)
-
+app.use('/users', routeUsers)
 //Serve static Assets if we are in production
 
 if(process.env.NODE_ENV == "production"){

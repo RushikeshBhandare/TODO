@@ -3,6 +3,8 @@ import Navabar from './components/Navbar'
 import AllNotes from './components/AllNotes'
 import CreateNote from './components/CreateNote'
 import WebFooter from './components/WebFooter'
+import LoginPage from './components/LoginPage'
+import SignUp from './components/SignUp'
 import {BrowserRouter as Router, Route}from 'react-router-dom' 
 
 const App = () =>{
@@ -10,7 +12,8 @@ const App = () =>{
         <Router>
             <div>
             <Navabar/>
-            <Route path="/" exact component={AllNotes}/>
+            <Route path="/" exact component={SignUp}/>
+            <Route path="/all" exact component={AllNotes}/>
             <Route path="/create" exact component={CreateNote}/>
            
             {/* <WebFooter/> */}
