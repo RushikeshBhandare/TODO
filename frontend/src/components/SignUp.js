@@ -261,7 +261,7 @@ const SignUp = () =>{
 
                     {/* Mobile no  */}
                     <div>
-                         <label className="signUp-lable">Mobile NO</label>
+                         <label className="signUp-lable">Mobile No</label>
                     </div>
                     <div className="signUp-input">
                             <input 

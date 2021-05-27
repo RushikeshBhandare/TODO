@@ -60,7 +60,7 @@ const LoginPage = () =>{
                         </button>
                     </div>
                     <div className="new-resister">
-                            <Link to="/create" className="res">new Registration</Link>
+                            <Link to="/Signup" className="res">new Registration</Link>
                             {/* <a className="res"></a> */}
                     </div>
                </form>
