@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from  'react-router-dom' 
 import axios from 'axios'
+import {Redirect} from 'react-router'
+import AllNotes from './AllNotes'
 require ('./style/signUp.css')
 
 const SignUp = () =>{
@@ -22,6 +24,10 @@ const SignUp = () =>{
 
     const [isUsernameAlradyTaken, setIsUsernameAlradyTaken] = useState('') 
     const [isEmailAlradyTaken, setIsEmailAlradyTaken] = useState('')
+
+    //is submites
+    const [isSubmited, setIsSubmited] = useState(false)
+
 
     useEffect(()=>{
         if(password == conformPassword){
@@ -93,6 +99,8 @@ const SignUp = () =>{
         setIsPassSelected('')
      
     }
+
+    //Submit Form 
     const onFormSubmit = (e) =>{
         e.preventDefault();
         if(isEmailAlradyTaken != ''){
@@ -127,19 +135,26 @@ const SignUp = () =>{
                     await axios.post('/users/add', data)
                 }
                 submitForm();
+                alert('SignUp Sucess')
+                setTimeout(()=>{
+                    setIsSubmited(true);
+                }, 1000)
                 console.log('form Submited')
             }catch(error){
                 console.log(error)
             }
 
-            
+            // window.location.href="/all"
             console.log(data)
         }else{{
             // alert()
         }}
 
     }
-  
+
+    if(isSubmited){
+        return(<AllNotes/>)
+    } else{
 
     return(
         <div className="signUp-container">
@@ -252,6 +267,8 @@ const SignUp = () =>{
                             <input 
                                 type="number"
                                 placeholder="Create username"
+                                pattern="(?=.{8,}"
+
                                 onChange={(e)=>{setMobileNo(e.target.value)}}
                             />
                     </div>
@@ -263,7 +280,7 @@ const SignUp = () =>{
                             className="signUp button"
                             onClick={(e)=>{onClickLogin(e)}}
                         >
-                            SignUp
+                          SignUp 
                         </button>
                     </div>
                  
@@ -272,6 +289,7 @@ const SignUp = () =>{
             </div>
         </div>
     )
+    }
 }
 
 export default SignUp

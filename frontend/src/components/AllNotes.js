@@ -26,8 +26,8 @@ const AllNotes = () =>{
 
     Notes.reverse()
     const printNotes = Notes.map((note)=>{
-        const title =  note.title.slice(0, 12)
-        const description = note.description.slice(0, 50)
+        const title =  note.title.slice(0, 25)
+        const description = note.description.slice(0, 250)
         const day = new Date(note.date).getDay()
         const month = new Date(note.date).getMonth()
         const year = new Date(note.date).getFullYear()
