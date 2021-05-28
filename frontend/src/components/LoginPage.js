@@ -34,11 +34,12 @@ const LoginPage = (props) =>{
     
     const formOnSubmit = async(e) =>{
         e.preventDefault();
-        const data ={
-            email: email,
-            password: password 
-        }
+     
         try{
+            const data ={
+                email: email,
+                password: password 
+            }
             const result = await axios.post('/users/login', data)
             localStorage.setItem('token', result.data.token)
             localStorage.setItem('userData', result.data)
@@ -51,7 +52,8 @@ const LoginPage = (props) =>{
             }
 
         }catch(error){
-            console.log(error)
+            console.log("Error for the loging in ")
+            console.log("error While Loging in ",error)
         }
     }
 

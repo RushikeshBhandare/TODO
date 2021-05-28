@@ -96,11 +96,11 @@ router.route('/login').post(async(req, res)=>{
 
     }catch(error){
         console.log(error)
-        res.status(404).send(error)
+        res.status(404).send("login Error : -"+error)
     }
 })
 
-router.get(('/profile'),verify, async(req,res)=>{
+router.route('/profile').post(verify, async(req,res)=>{
     try{
       const user = await NotesUsers.findById({_id : req.user._id})
       if(!user){
@@ -109,7 +109,7 @@ router.get(('/profile'),verify, async(req,res)=>{
       res.send(user)
   
     }catch(error){
-        res.status(404).send(error)
+        res.status(404).send("Login "+ error)
     }     
   
   })
