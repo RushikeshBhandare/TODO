@@ -36,11 +36,11 @@ const LoginPage = (props) =>{
         e.preventDefault();
      
         try{
-            const data ={
+            const check ={
                 email: email,
                 password: password 
             }
-            const result = await axios.post('/users/login', data)
+            const result = await axios.post('users/email', check)
             localStorage.setItem('token', result.data.token)
             localStorage.setItem('userData', result.data)
             console.log('result data', result.data)
