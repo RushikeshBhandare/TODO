@@ -40,7 +40,7 @@ const AllNotes = (props) =>{
         const months = ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
               
         return(
-            <NotesBlock title={title} description={description} day={day} month={months[month]} year={year}/>
+            <NotesBlock NoteID={note._id} title={title} description={description} day={day} month={months[month]} year={year}/>
         )
     })
 

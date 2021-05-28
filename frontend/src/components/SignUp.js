@@ -3,6 +3,7 @@ import {Link} from  'react-router-dom'
 import axios from 'axios'
 import {Redirect} from 'react-router'
 import AllNotes from './AllNotes'
+import Home from './Home'
 require ('./style/signUp.css')
 
 const SignUp = () =>{
@@ -153,7 +154,7 @@ const SignUp = () =>{
     }
 
     if(isSubmited){
-        return(<AllNotes/>)
+        return(<Home/>)
     } else{
 
     return(

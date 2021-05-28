@@ -8,9 +8,8 @@ const NotesSchema = new mongoose.Schema({
     },
     title:{
         type:String,
-        required:true,
-        unique:true,
-        trim:true
+        trim:true,
+        max:70
     },
     description:{
         type:String,
