@@ -74,6 +74,7 @@ router.route('/email').post(async(req, res)=>{
 
 router.route('/login').post(async(req, res)=>{
     try{
+        console.log("Call to Login Request ")
         const user = await NotesUsers.findOne({email: req.body.email})
         if(!user){
             res.send('email or password incorrect')
