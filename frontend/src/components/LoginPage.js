@@ -34,20 +34,16 @@ const LoginPage = (props) =>{
     
     const formOnSubmit = async(e) =>{
         e.preventDefault();
-        console.log("callong from form on submit")
-
         const data ={
             email: email,
             password: password 
         }
         try{
             const result = await axios.post('/users/login', data)
-            console.log('result', result.data.token)
-            console.log('result full', result.data)
             localStorage.setItem('token', result.data.token)
             localStorage.setItem('userData', result.data)
-            const token = localStorage.getItem('token')
             console.log('result data', result.data)
+            console.log('result', result)
             if(result.data === 'email or password incorrect'){
                 alert(result.data)
             }else{
@@ -57,8 +53,6 @@ const LoginPage = (props) =>{
         }catch(error){
             console.log(error)
         }
-
-        console.log('hello')
     }
 
     if(isLogin){

@@ -4,6 +4,7 @@ require('./style/home.css')
 const Home = () =>{
     return (
         <div className="HomeContainer">
+           S
             <div className="Write-Container">
                 <h1>write</h1>
             </div>
