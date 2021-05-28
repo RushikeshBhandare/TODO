@@ -1,10 +1,10 @@
 const router = require('express').Router()
 const Notes = require('../models/notes')
+const verify = require('./verifyToken')
 
-
-router.route('/').get(async(req,res)=>{
+router.get(('/'),verify, async(req,res)=>{
   try{
-    const responce = await Notes.find({})
+    const responce = await Notes.find({userid : req.user._id})
     if(!responce){
         responce.send('Not Data Found ')
     }
@@ -16,13 +16,15 @@ router.route('/').get(async(req,res)=>{
 
 })
 
-router.route('/add').post(async(req, res)=>{
+router.post(('/add'), verify ,async(req, res)=>{
     try{
         console.log(req.body)
+        const userid = req.user._id;
         const title = req.body.title;
         const description = req.body.description;
         const date = req.body.date;
         const newNote = new Notes({
+            userid,
             title,
             description,
             date

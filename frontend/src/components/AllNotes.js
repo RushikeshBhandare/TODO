@@ -5,24 +5,30 @@ import axios from 'axios'
 
 require ('./style/allNotes.css')
 
-const AllNotes = () =>{
+const AllNotes = (props) =>{
    
     const [Notes, setNotes] = useState([])
     useEffect(()=>{
+        
+
         const getNotes = async()=>{
             try{
-                const res = await axios.get('/notes')
-                if(!res){
-                    console.log('no data fround ')
+                const config = {
+                    headers:{
+                        authtoken: localStorage.getItem('token')
+                    }
                 }
+                const res = await axios.get('/notes', config)
                 setNotes(res.data)
+                console.log('Notes', res)
             }catch(error){
-                console.log('Error from notes', error)
+                console.log(error)
             }
         }
-        getNotes()
 
-    }, [])
+        getNotes();
+
+    }, [props.isAdded])
 
     Notes.reverse()
     const printNotes = Notes.map((note)=>{

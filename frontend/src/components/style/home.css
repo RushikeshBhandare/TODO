@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400&display=swap');
+
+
+.HomeContainer{
+    width: 100%;
+    margin-top: 150px;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.HomeContainer h1{
+    text-align: center;
+    font-size: 80px;
+    /* text-transform: uppercase; */
+}
+
+.Write-Container{
+    height: 100px;
+    /* background-color: red; */
+    width: 350px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+
+
+}

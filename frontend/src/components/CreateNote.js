@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 require('./style/createNote.css')
 
 
-const CreateNote = () =>{
+const CreateNote = (props) =>{
    
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -14,20 +14,30 @@ const CreateNote = () =>{
     })
 
     const onClickSubmit = async(e) =>{
+       
         try{
+            const config = {
+                headers:{
+                    authtoken: localStorage.getItem('token')
+                }
+            }
+            const userId = localStorage.getItem('userData')
             const NoteData = {
+                userid: userId._id,
                 title: title,
                 description:description,
                 date: new Date()
             }
-            await axios.post('/notes/add', NoteData)
+            await axios.post('/notes/add', NoteData, config)
+            props.CheckIsAdded(title)
             
         }catch(error){
             console.log('while Creating : ', error )
+            alert('YOU DONT HAVE ACCESS!!')
         }
         console.log('clicked on click')
         console.log(title)
-        console.log(new Date())
+    
 
 
         e.preventDefault();
