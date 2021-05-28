@@ -40,7 +40,7 @@ const LoginPage = (props) =>{
                 email: email,
                 password: password 
             }
-            const result = await axios.post('users/email', check)
+            const result = await axios.post('users/login', check)
             localStorage.setItem('token', result.data.token)
             localStorage.setItem('userData', result.data)
             console.log('result data', result.data)
