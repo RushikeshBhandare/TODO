@@ -21,7 +21,8 @@ const CreateNote = (props) =>{
                     authtoken: localStorage.getItem('token')
                 }
             }
-            const userId = localStorage.getItem('userData')
+            const userId = localStorage.getItem('userId')
+            console.log(userId)
             const NoteData = {
                 userid: userId._id,
                 title: title,
@@ -35,8 +36,7 @@ const CreateNote = (props) =>{
             console.log('while Creating : ', error )
             alert('YOU DONT HAVE ACCESS!!')
         }
-        console.log('clicked on click')
-        console.log(title)
+     
     
 
 

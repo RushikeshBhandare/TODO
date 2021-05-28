@@ -2,7 +2,7 @@
 
 
 .HomeContainer{
-    width: 100%;
+    width: 99%;
     margin-top: 150px;
     font-family: 'Anton', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -10,6 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .HomeContainer h1{
@@ -25,6 +26,8 @@
     margin: 10px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+    background-color: rgba(119, 233, 104, 0.822);
+    color: white;
 
 
 }

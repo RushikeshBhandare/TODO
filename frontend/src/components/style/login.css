@@ -9,9 +9,6 @@
     
     font-family: 'Anton', sans-serif;
     font-family: 'Roboto', sans-serif;
-
-    
-
 }
 .login-Welcome{
     width: 375px;
@@ -64,6 +61,8 @@
     font-size: 20px;
     cursor: pointer;
     padding: 7px;
+    background-color: rgba(115, 245, 121, 0.822);
+
 }
 
 .new-resister{

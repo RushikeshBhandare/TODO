@@ -18,7 +18,6 @@ router.get(('/'),verify, async(req,res)=>{
 
 router.post(('/add'), verify ,async(req, res)=>{
     try{
-        console.log(req.body)
         const userid = req.user._id;
         const title = req.body.title;
         const description = req.body.description;
@@ -41,9 +40,9 @@ router.post(('/add'), verify ,async(req, res)=>{
 
 router.post(('/delete'), verify , async (req,res)=>{
     try{
-        console.log("uer id",req.body._id)       
+      
         const notedeleted = await Notes.findByIdAndDelete(req.body._id)
-        res.send('deleted') 
+
         console.log(notedeleted)       
     }catch(error){
         res.status(400).send(error)

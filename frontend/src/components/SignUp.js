@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from  'react-router-dom' 
 import axios from 'axios'
-import {Redirect} from 'react-router'
-import AllNotes from './AllNotes'
 import Home from './Home'
+import AlertMassage from './AlertMassage'
 require ('./style/signUp.css')
 
 const SignUp = () =>{
@@ -28,16 +26,16 @@ const SignUp = () =>{
 
     //is submites
     const [isSubmited, setIsSubmited] = useState(false)
+    const [isClickedOk, setIsClickedOk] = useState(false)
 
 
     useEffect(()=>{
-        if(password == conformPassword){
+        if(password === conformPassword){
             setPasswodNotMatch('')
         }else{
             setPasswodNotMatch('Password Not match')
         }
-        console.log('pass')
-    }, [conformPassword])
+    }, [conformPassword, isClickedOk, password])
 
     //Check username 
     useEffect(()=>{
@@ -53,7 +51,6 @@ const SignUp = () =>{
                 else{
                     setIsUsernameAlradyTaken('')
                 }
-                console.log(data)
 
             }catch(error){
                 console.log(error)
@@ -77,7 +74,6 @@ const SignUp = () =>{
                 else{
                     setIsEmailAlradyTaken('')
                 }
-                console.log(data)
 
             }catch(error){
                 console.log(error)
@@ -104,11 +100,11 @@ const SignUp = () =>{
     //Submit Form 
     const onFormSubmit = (e) =>{
         e.preventDefault();
-        if(isEmailAlradyTaken != ''){
+        if(isEmailAlradyTaken !== ''){
             alert('check Email')
             return;
         }
-        if(isEmailAlradyTaken !=''){
+        if(isEmailAlradyTaken !==''){
             alert('check username')
             return;
         }
@@ -116,9 +112,9 @@ const SignUp = () =>{
         if(password === conformPassword){
 
             var WhichGender = ''
-            if(isFeMale == 'on'){
+            if(isFeMale === 'on'){
                 WhichGender='Female'
-            }else if(isMale == 'on'){
+            }else if(isMale === 'on'){
                 WhichGender = 'Male'
             }
            
@@ -136,7 +132,7 @@ const SignUp = () =>{
                     await axios.post('/users/add', data)
                 }
                 submitForm();
-                alert('SignUp Sucess')
+                // alert('SignUp Sucess')
                 setTimeout(()=>{
                     setIsSubmited(true);
                 }, 1000)
@@ -147,20 +143,26 @@ const SignUp = () =>{
 
             // window.location.href="/all"
             console.log(data)
-        }else{{
-            // alert()
-        }}
+        }
 
     }
 
+    const isClickedOn = (val) =>{
+        setIsClickedOk(val)
+    }
+
     if(isSubmited){
-        return(<Home/>)
+        if(isClickedOk){
+           return <Home/>
+        }else{
+            return(<AlertMassage isClickedOn={isClickedOn}/>)
+        }
     } else{
 
     return(
         <div className="signUp-container">
             <div className="signUp-Welcome">
-                <h2>New User </h2>
+                <h2>New User Resistration </h2>
             </div>  
             <div className="signUp-mainBlock">
                <form onSubmit={(e)=>{onFormSubmit(e)}}>
@@ -233,7 +235,7 @@ const SignUp = () =>{
                     {/* Age */}
 
                     <div>
-                            <label className="signUp-lable">Age</label>
+                            <label className="signUp-lable">Birth Date</label>
                     </div>
                     <div className="signUp-Age">
                         

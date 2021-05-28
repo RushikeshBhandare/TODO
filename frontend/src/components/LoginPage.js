@@ -12,8 +12,6 @@ const LoginPage = (props) =>{
 
 
     const onClickLogin = (e) => {
-        console.log(email);
-        console.log(password);
         const isEverything = false
         if(isEverything){
 
@@ -30,7 +28,7 @@ const LoginPage = (props) =>{
             setIslogIn(false)
         }
 
-    },[isLogin])
+    },[isLogin, props])
     
     const formOnSubmit = async(e) =>{
         e.preventDefault();
@@ -42,9 +40,11 @@ const LoginPage = (props) =>{
             }
             const result = await axios.post('users/login', check)
             localStorage.setItem('token', result.data.token)
-            localStorage.setItem('userData', result.data)
-            console.log('result data', result.data)
-            console.log('result', result)
+            localStorage.setItem('userId', result.data._id)
+            localStorage.setItem('email', result.data.email)
+            localStorage.setItem('mobileno', result.data.mobileno)
+            localStorage.setItem('username', result.data.username)
+           
             if(result.data === 'email or password incorrect'){
                 alert(result.data)
             }else{
@@ -52,7 +52,6 @@ const LoginPage = (props) =>{
             }
 
         }catch(error){
-            console.log("Error for the loging in ")
             console.log("error While Loging in ",error)
         }
     }
@@ -69,23 +68,23 @@ const LoginPage = (props) =>{
             <div className="login-mainBlock">
                <form onSubmit={(e)=>{formOnSubmit(e)}}>
                     <div>
-                         <label className="login-lable">User name</label>
+                         <label className="login-lable">Email ID</label>
                     </div>
                     <div className="login-input">
                             <input 
                                 required 
-                                placeholder="Username"
+                                placeholder="Email ID"
                                 onChange={(e)=>{setUserName(e.target.value)}}
                             />
                     </div>
                     <div>
-                            <label className="login-lable">User name</label>
+                            <label className="login-lable">Password</label>
                     </div>
                     <div className="login-input">
                             <input 
                                 type = "password"
                                 required 
-                                placeholder="password"
+                                placeholder="Password"
                                 onChange={(e)=>{setPassword(e.target.value)}}
                             />
                     </div>

@@ -44,9 +44,7 @@ const AllNotes = (props) =>{
         )
     })
 
-    const onClickCreate = (e) =>{
-        
-    }
+ 
     return (
         <div>
             <div>

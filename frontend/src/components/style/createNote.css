@@ -11,7 +11,7 @@
 
     font-family: 'Anton', sans-serif;
     font-family: 'Roboto', sans-serif; 
-
+ 
 }
 
 .CreteNoteHere{
@@ -28,6 +28,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: rgba(150, 236, 150, 0.959);
     font-size: 20px;
+    
 }
 
 .Link-CR{
@@ -37,7 +38,8 @@
 
 .createNote-Container{
     height: 550px;
-    width: 400px;
+    width: 625px;
+    
     /* box-shadow: 10px 10px 8px  rgba(80, 80, 80, 0.2); */
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -47,7 +49,7 @@
 
 .createNote-Text{
     height: 60px;
-    width: 405px;
+    width: 325px;
     /* box-shadow: 10px 10px 8px  rgba(80, 80, 80, 0.2); */
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -55,7 +57,6 @@
     font-size: 25px;
     border-radius: 10px;
     cursor: pointer;
-
 }
 
 .JustText{
@@ -69,11 +70,11 @@
     border-radius: 15px;
     height: 100%;
     /* background-color: rgb(66, 66, 68); */
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .createNote-block-title input{
-    width: 365px;
+    width: 95%;
     height: 60px;
     font-size: 28px;
     padding-left: 10px;

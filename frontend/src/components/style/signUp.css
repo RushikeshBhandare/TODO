@@ -14,8 +14,8 @@
 
 }
 .signUp-Welcome{
-    width: 375px;
-    margin-top: 10px;
+    width: 340px;
+    /* margin-top: 10px; */
     height: 100px;
     /* background-color: black; */
     font-size: 30px;
@@ -28,10 +28,12 @@
     height: 770px;
     /* background-color: brown; */
     margin: 10px;
+    margin-bottom: 20px;
     border-radius: 20px;
     padding: 10px;
     padding-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+    
 
 }
 
@@ -64,6 +66,8 @@
     font-size: 20px;
     cursor: pointer;
     padding: 7px;
+    background-color: rgba(115, 245, 121, 0.822);
+
 }
 .passMatch{
     margin: 15px;

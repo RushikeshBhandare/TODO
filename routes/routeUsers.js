@@ -73,14 +73,8 @@ router.route('/email').post(async(req, res)=>{
 })
 
 router.route('/login').post(async(req, res)=>{
-    try{
-        console.log("Call to Login Request ")
-        console.log("request body :-", req.body)
-        
+    try{      
         const user = await NotesUsers.findOne({email: req.body.email})
-        console.log("request body :-", req.body)
-        console.log("from login:-",user)
-        
         if(!user){
             res.send('email or password incorrect')
         }
@@ -93,7 +87,6 @@ router.route('/login').post(async(req, res)=>{
         //Create and assig na token 
         const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
         
-        console.log( "Token" , token)
         
         res.header('auth-token', token).send({
             _id: user._id,
@@ -123,10 +116,7 @@ router.route('/profile').post(verify, async(req,res)=>{
     }     
   
   })
-  
-const HEllO =  () =>{
 
-}
 
 
 module.exports = router

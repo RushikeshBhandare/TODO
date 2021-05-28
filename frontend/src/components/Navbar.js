@@ -11,29 +11,25 @@ const Navbar = (props) =>{
     //useEffect
     useEffect(()=>{
         setToken(localStorage.getItem('token'))
-        console.log("called")
     },[token, props.isLogedIn])
 
     const ReamoveAuthToken = () =>{
-        const token = localStorage.getItem('token')
-        console.log('Token :- ', token)
-        
         localStorage.removeItem('token')
-        const afterToken = localStorage.getItem('token') 
-        console.log('after token :- ', afterToken)
         setToken('')
     } 
     if(token){
         return (
             <div className="navbar-container">
-            <div className="navbar-Logo navbar-item ">
-                    <h2>NOTES</h2>
+               <Link to ="/"  style={{ textDecoration: 'none' }}>
+                <div className="navbar-Logo navbar-item ">
+                    <h2 className="logo-text">NOTES</h2>
                 </div>
+                </Link>
                 <div className="navbar-item">
                     <ul>
-                        <li>Profile </li>
-                        <li>About</li>
-                        <Link to="/Home" onClick={()=>{ReamoveAuthToken()}}><li>LogOut</li></Link>
+                        <li>About </li>
+                        <Link to="/profile"  style={{ textDecoration: 'none' }}><li>Profile</li></Link>
+                        <Link to="/Home" onClick={()=>{ReamoveAuthToken()}}  style={{ textDecoration: 'none' }}><li>LogOut</li></Link>
                     </ul>
                 </div>
             </div>
