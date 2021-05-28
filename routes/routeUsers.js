@@ -75,17 +75,26 @@ router.route('/email').post(async(req, res)=>{
 router.route('/login').post(async(req, res)=>{
     try{
         console.log("Call to Login Request ")
+        console.log("request body :-", req.body)
+        
         const user = await NotesUsers.findOne({email: req.body.email})
+        console.log("request body :-", req.body)
+        console.log("from login:-",user)
+        
         if(!user){
             res.send('email or password incorrect')
         }
         const passwordCheck = await bcrypt.compareSync(req.body.password, user.password)
+        console.log( "password Check" ,passwordCheck)
         if(!passwordCheck){
             res.send('password not match ')
         }
 
         //Create and assig na token 
         const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
+        
+        console.log( "Token" , token)
+        
         res.header('auth-token', token).send({
             _id: user._id,
             username : user.username,
@@ -97,7 +106,7 @@ router.route('/login').post(async(req, res)=>{
 
     }catch(error){
         console.log(error)
-        res.status(404).send("login Error : -"+error)
+        res.status(400).send("login Error : -"+error)
     }
 })
 
