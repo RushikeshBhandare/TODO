@@ -7,8 +7,9 @@
 
 .UserProfile{
     margin-top: 10px;
+    margin-bottom: 50px;
     width: 345px;
-    height:200px;
+    height:400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,3 +36,30 @@
     font-size: 40px;
     text-align: center;
 }
+
+.email{
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.mobile-no{
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.Delete{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.deleteButton{
+    width: 130px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.856);
+}
+

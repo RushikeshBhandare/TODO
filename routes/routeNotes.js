@@ -42,13 +42,26 @@ router.post(('/delete'), verify , async (req,res)=>{
     try{
       
         const notedeleted = await Notes.findByIdAndDelete(req.body._id)
-
         console.log(notedeleted)       
+        res.send('delets note ')
     }catch(error){
         res.status(400).send(error)
     }
 })
 
+router.post(('/deleteall'), verify , async (req,res)=>{
+    try{
+        const allNotes = await Notes.find({userid:req.user._id})
+        allNotes.map(async(note)=>{
+            const data = await Notes.findByIdAndDelete(note._id)
+        })
+       
+        res.send("Deleted Success")      
+    }catch(error){
+        console.log(error)       
+        res.status(400).send(error)
+    }
+})
 
 
 

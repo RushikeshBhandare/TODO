@@ -114,8 +114,22 @@ router.route('/profile').post(verify, async(req,res)=>{
     }catch(error){
         res.status(404).send("Login "+ error)
     }     
-  
   })
+
+  router.route('/delete').post(verify, async(req,res)=>{
+    try{
+      const user = await NotesUsers.findByIdAndDelete({_id : req.user._id})
+      if(!user){
+          responce.send('Not Data Found ')
+      }
+      res.send(user)
+  
+    }catch(error){
+        res.status(404).send("Login "+ error)
+    }     
+  })
+
+  
 
 
 
